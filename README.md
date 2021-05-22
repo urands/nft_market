@@ -11,7 +11,7 @@ A token was deployed for account pubkey: 0x65eb078be1ae9186c4ff96e13e0cfe7f67e5c
 TONTokenWallet: [0:fdd64bbb036d3f737779eef2ef8441abf4fa906bb282a1e89a6355c39d045bfc](https://net.ton.live/accounts/accountDetails?id=0%3Afdd64bbb036d3f737779eef2ef8441abf4fa906bb282a1e89a6355c39d045bfc)
 
 These are test tokens and they do not have fields for storing meta information. Therefore, it was decided to expand their functionality. Also needed contract   to buy/sell transactions of tokens.
-[img](./docs/token.png)
+![img](./docs/token.png)
 
 
 
