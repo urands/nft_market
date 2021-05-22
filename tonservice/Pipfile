@@ -1,0 +1,20 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+rpcgrid = "*"
+aiohttp = "*"
+aiohttp-retry = "*"
+requests = "*"
+colorlog = "*"
+sqlalchemy = "*"
+tortoise-orm = "*"
+aiomysql = "*"
+pandas = "*"
+
+[requires]
+python_version = "3"

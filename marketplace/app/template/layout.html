@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>NFT Freeton market</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='font-awesome.min.css') }}">
+</head>
+<body>
+<div class="container">
+    <div class="row head">
+            <div class="col-md-4">
+			<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 22 21" fill="none"><path d="M16.6345 0.750008C16.8212 0.749026 16.9969 0.841718 17.1104 1.00102L21.6942 7.43537C21.8759 7.69047 21.8562 8.05304 21.6479 8.28741L11.2907 19.9414C11.0522 20.2096 10.6575 20.2117 10.4215 19.946L0.166594 8.40042C-0.0396366 8.16823 -0.0561047 7.80585 0.127893 7.54882L4.76869 1.06594C4.88359 0.905444 5.06017 0.810898 5.24686 0.809915L16.6345 0.750008Z" fill="#62CCFA"></path><mask id="mask0" maskUnits="userSpaceOnUse" x="0" y="0" width="22" height="21"><path d="M16.6345 0.750008C16.8212 0.749026 16.9969 0.841718 17.1104 1.00102L21.6942 7.43537C21.8759 7.69047 21.8562 8.05304 21.6479 8.28741L11.2907 19.9414C11.0522 20.2096 10.6575 20.2117 10.4215 19.946L0.166595 8.40042C-0.0396366 8.16823 -0.0561047 7.80585 0.127893 7.54882L4.76869 1.06594C4.88359 0.905444 5.06017 0.810898 5.24686 0.809915L16.6345 0.750008Z" fill="#4CA2EE"></path></mask><g mask="url(#mask0)"><rect width="21.8182" height="12.1212" transform="matrix(-1 0 0 1 21.8184 8.02295)" fill="#319FFC"></rect><path opacity="0.8" d="M0.606149 8.02255L6.06069 -1.06836L-7.27264 8.02255L10.9092 20.1438L0.606149 8.02255Z" fill="#1B70CF"></path><path opacity="0.6" d="M6.06058 0.75L3.03027 8.02273H10.9091L6.06058 0.75Z" fill="#B1F7FF"></path><path opacity="0.4" d="M18.1819 8.02296L13.3334 -3.49219L26.6668 8.02296L10.9092 20.1442L18.1819 8.02296Z" fill="#3E67B5"></path><path opacity="0.8" d="M20.0001 8.02273L16.9698 0.75L29.091 8.02273L10.9092 20.1439L20.0001 8.02273Z" fill="#1B70CF"></path><path opacity="0.4" d="M20 8.02295L16.9697 0.750222H15.1515L18.1818 8.02295H20Z" fill="#91E6FD"></path><path opacity="0.4" d="M0.605957 8.02295L6.0605 -1.06796V0.750222L3.0302 8.02295H0.605957Z" fill="#91E6FD"></path><path opacity="0.4" d="M15.1518 0.75L18.1821 8.02273H10.9094L15.1518 0.75Z" fill="#2898FF"></path><path d="M10.9094 20.7502V8.02295H18.1821L10.9094 20.7502Z" fill="#2FA3F7"></path></g><path opacity="0.6" d="M10.909 20.7502V8.02295H3.63623L10.909 20.7502Z" fill="#9CE0FF"></path></svg>						
+            NFT Freeton marketplace
+            <span class="badge bg-warning text-dark">TEST.NET</span>
+                </div>
+            <div class="col-md-2">
+                {% if user %}{{ user.fio }}{%endif%}
+            </div>
+            <div class="col-md-2">
+                <a href="/create" ><i class="fa fa-upload" aria-hidden="true"></i> Create NFT</a>
+            </div>
+            <div class="col-md-2">
+                <a href="/" ><i class="fa fa-question-circle-o" aria-hidden="true"></i> Help</a>
+            </div>
+            <div class="col-md-2">
+                <a href="/" >Exit</a>
+            </div>
+
+
+    </div>
+    <div class="row">
+        {% block content -%}
+        {% endblock %}
+    </div>
+</div>
+
+<script  src="https://code.jquery.com/jquery-3.5.1.min.js"
+         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+         crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+{% block script %}
+{% endblock %}
+</body>
+</html>
