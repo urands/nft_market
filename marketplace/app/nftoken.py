@@ -16,10 +16,10 @@ log = getLogger('ton.py')
 CONTRACT_DIR = ''
 
 
-def call_from_root_function(func_name, params = {}):
+def call_from_root_function(func_name, params = None):
     address_rtc = os.getenv('RTC_ADDRESS', '0:d9940684ab66b34e50f0e1062165ebd691c966430927fcafab519e3e11cf8942')
-    signer_public = os.getenv('ROOT_SIGNER_PUBLIC', '')
-    signer_secret = os.getenv('ROOT_SIGNER_SECRET', '')
+    signer_public = os.getenv('ROOT_SIGNER_PUBLIC')
+    signer_secret = os.getenv('ROOT_SIGNER_SECRET')
     keypair = KeyPair(signer_public, signer_secret)
     signer = Signer.Keys(keys=keypair)
     call_set = CallSet(
@@ -46,21 +46,21 @@ def call_from_root_function(func_name, params = {}):
     return result
 
 
-def create_nf_token( pubkey, metadata  ):
+def create_nf_token( pubkey, metadata = None ):
 
-    result = call_from_root_function('getTotalGranted', {})
+    result = call_from_root_function('getTotalGranted');
 
     if (result):
         tokenId = int(result[0]) + 1
 
         result = call_from_root_function('getWalletAddress ', 
                     {   "workchain_id": 0,
-                        "pubkey": pubkey})
+                        "pubkey": pubkey});
 
         if (result):
             tokenAddress = result[0]
 
-        result = call_from_root_function('mint',  {   "tokenId": tokenId  } )
+        result = call_from_root_function('mint',  {   "tokenId": tokenId  } );
 
         if (result or int(result[0]) != tokenId):
             raise ValueError('Mint error.')
@@ -71,7 +71,7 @@ def create_nf_token( pubkey, metadata  ):
                 "pubkey": pubkey,
                 'tokenId': tokenId,
                 'grams': 1            
-        })
+            });
 
         if (result or int(result[0]) != tokenAddress):
             raise ValueError('Deploy error.')
@@ -80,12 +80,11 @@ def create_nf_token( pubkey, metadata  ):
         result = call_from_root_function('grant', {
                 "dest": tokenAddress,
                 'tokenId': tokenId,
-                'grams': 1            
-        })
+                'grams': 1    });        
 
         #log.info(f'create_nf_token {tokenId} {tokenAddress}')
 
         if (result):
             return (tokenId, tokenAddress)
-
+            
         return None

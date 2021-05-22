@@ -18,7 +18,7 @@ network = NetworkConfig(
     wait_for_timeout=None, out_of_sync_threshold=None, sending_endpoint_count=None, 
     access_key=None, max_reconnect_timeout=None)
 
-ton = TonClient(config=ClientConfig(network = network), is_core_async=False)
+ton = TonClient(config=ClientConfig(network = network))
 
 time.sleep(5)
 

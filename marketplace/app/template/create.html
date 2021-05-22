@@ -4,6 +4,7 @@
 {{ super() }}
 <div class="col-md-12 center-text">
     <h1>Create You Own NFTs easy in FreeTON. </h1>
+    <h3>Next step is create TIP-3 NFT wallet with first NFToken. </h3>
 </div>
 <div class="col-md-12 center-text">
     
@@ -11,7 +12,7 @@
     <form action="#" method="POST" >
         <div class="row align-items-center">
             <div class="col-auto">
-              <label for="ton-address" class="col-form-label">Address</label>
+              <label for="ton-address" class="col-form-label">Pubkey</label>
             </div>
             <div class="col-auto">
               <input type="text" id="ton-address" class="form-control" name="tonaddress" aria-describedby="ton-address-inline" 
@@ -19,14 +20,16 @@
             </div>
             <div class="col-auto">
               <span id="ton-address-inline" class="form-text">
-                Enter you address or public key.
+                Enter you public key.
               </span>
             </div>
           </div>
           <div class="row g-3 align-items-center">
+            
             <div class="col-auto">
+              <br/>
                 <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
+           </div>
         </div>
     </form>
     </div>
@@ -34,7 +37,7 @@
 <div class="col-md-12 bottom-text">
     <div>
     или <a href="#">загрузите файл со своего компьютера *</a>
-    <p>* Вы можете загружать только файлы в xlsx и csv форматах</p>
+    <p>* Вы можете загружать только файлы</p>
     </div>
 </div>
 {% endblock %}

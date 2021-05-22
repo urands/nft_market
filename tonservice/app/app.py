@@ -1,13 +1,13 @@
-from aiorequest import fetch_address
 import time
 import asyncio
 import rpcgrid.aio as rpcg
-from logger import get_logger
+#from logger import get_logger
+from logging import getLogger
 from provider import MicroserviceProvider
 import sys
 import os
 import pandas as pd
-log = get_logger(__name__)
+log = getLogger(__name__)
 dburl = os.getenv('DB_URL', 'mysql://root@localhost:3306/market')
 
 from tortoise import Tortoise, fields, run_async

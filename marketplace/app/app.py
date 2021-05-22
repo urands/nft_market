@@ -23,9 +23,9 @@ def start_worker(loop):
     finally:
         loop.close()
 
-@app.route('/')
+@app.route('/') 
 def index():
-    return render_template('index.html', user = models.User.current() )
+    return render_template('index.html', user = models.User.current(), data = [] )
 
 
 @app.route('/create', methods=['GET', 'POST'])

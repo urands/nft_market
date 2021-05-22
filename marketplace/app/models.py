@@ -6,7 +6,6 @@ from sqlalchemy.sql import func
 class User(db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key = True)
-    tokenid = db.Column(db.Integer, default=None )
     username = db.Column(db.String(32), index = True)
     password = db.Column(db.String(128))
 
@@ -20,7 +19,7 @@ class User(db.Model):
         idx =  1
         user = User.query.get(idx)
         if user is None:
-            user = User( fio='Simple user"', username = 'user')
+            user = User(username = 'user')
             db.session.add(user)
             db.session.commit()
 
@@ -41,8 +40,8 @@ class Files(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer)
-    token_id = db.Column(db.String)
-    token_address = db.Column(db.String)
+    token_id = db.Column(db.String(512))
+    token_address = db.Column(db.String(512))
     name = db.Column(db.String(256))
     filename = db.Column(db.String(256))
     filename_norm = db.Column(db.String(256), default=None)

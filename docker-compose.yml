@@ -16,8 +16,7 @@ services:
     
     ports:
         - "3306:3306"
-
-marketplace:
+  marketplace:
     build: ./marketplace
     image: marketplace:latest
     restart: always
